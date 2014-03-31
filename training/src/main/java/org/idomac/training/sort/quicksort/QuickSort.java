@@ -55,6 +55,12 @@ public class QuickSort {
     }
 
 
+    /**
+     * 元素交换
+     * @param a
+     * @param i
+     * @param j
+     */
     public static void exchange(int[] a,int i,int j) {
         int temp = a[i];
         a[i] = a[j];
