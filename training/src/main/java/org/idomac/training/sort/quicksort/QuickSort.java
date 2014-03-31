@@ -45,8 +45,8 @@ public class QuickSort {
         int j = right+1;
         int v = a[i];
         while(true) {
-            while(a[++i] < v) if(i == right) break;
-            while(v<a[--j]) if(j==left) break;
+            while(v>a[++i]) if(i == right) break;
+            while(v<a[--j]) if(j == left) break;
             if(i>=j) break;
             exchange(a,i,j);
         }
@@ -62,6 +62,7 @@ public class QuickSort {
      * @param j
      */
     public static void exchange(int[] a,int i,int j) {
+        System.out.println("---------");
         int temp = a[i];
         a[i] = a[j];
         a[j] = temp;
