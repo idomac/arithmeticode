@@ -62,7 +62,6 @@ public class QuickSort {
      * @param j
      */
     public static void exchange(int[] a,int i,int j) {
-        System.out.println("---------");
         int temp = a[i];
         a[i] = a[j];
         a[j] = temp;
