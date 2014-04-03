@@ -39,10 +39,11 @@ public class MyLinkedNode {
      */
     public void printToRight() {
         System.out.println(value+" ");
-        if(null!=null) {
-            left.printToRight();
+        if(null!=right) {
+            right.printToRight();
         }
     }
+
 
     public MyLinkedNode getLeft() {
         return left;
