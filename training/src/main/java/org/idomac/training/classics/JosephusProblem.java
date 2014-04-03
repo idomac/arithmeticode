@@ -1,14 +1,12 @@
-package org.idomac.training.yue;
+package org.idomac.training.classics;
 
 import java.util.Scanner;
 
 /**
- * @author : lihaoquan
- *
- * 约瑟夫环问题
- *
+ * Author : lihaoquan
+ * Description :
  */
-public class YueDemo {
+public class JosephusProblem {
 
     private static class Node{
         public int no;
@@ -21,7 +19,7 @@ public class YueDemo {
     /**
      * 约瑟夫函数处理
      */
-    public static void yuesefu(int totalNum, int countNum) {
+    public static void josephus(int totalNum, int countNum) {
 
         /**
          * 初始化一个闭环
@@ -46,7 +44,6 @@ public class YueDemo {
         System.out.println("----------"+currentPointer.next.no);
     }
 
-
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -55,6 +52,6 @@ public class YueDemo {
         System.out.println("请输入报数的大小:");
         int cycleNum = scanner.nextInt();
 
-        yuesefu(totalNum,cycleNum);
+        josephus(totalNum,cycleNum);
     }
 }

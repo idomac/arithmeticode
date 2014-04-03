@@ -22,4 +22,49 @@ public class MyLinkedNode {
     public MyLinkedNode(int value) {
         this.value = value;
     }
+
+
+    /**
+     * .向左打印
+     */
+    public void printToLeft() {
+        System.out.println(value+" ");
+        if(null != left) {
+            left.printToLeft();
+        }
+    }
+
+    /**
+     * .向右打印
+     */
+    public void printToRight() {
+        System.out.println(value+" ");
+        if(null!=null) {
+            left.printToRight();
+        }
+    }
+
+    public MyLinkedNode getLeft() {
+        return left;
+    }
+
+    public void setLeft(MyLinkedNode left) {
+        this.left = left;
+    }
+
+    public MyLinkedNode getRight() {
+        return right;
+    }
+
+    public void setRight(MyLinkedNode right) {
+        this.right = right;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
 }

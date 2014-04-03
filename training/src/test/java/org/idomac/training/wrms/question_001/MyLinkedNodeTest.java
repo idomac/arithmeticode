@@ -13,7 +13,7 @@ public class MyLinkedNodeTest {
     private static Logger logger = LoggerFactory.getLogger(MyLinkedNodeTest.class);
 
     @Test
-    public void insert() {
-        logger.info("insert test....");
+    public void display() {
+
     }
 }
