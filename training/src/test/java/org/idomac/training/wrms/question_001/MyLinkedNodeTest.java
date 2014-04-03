@@ -34,6 +34,9 @@ public class MyLinkedNodeTest {
         v14.setRight(v16);
 
 
+        Processor processor = new Processor();
+        v10 = processor.processTreeToLinked(v10);
+
         System.out.print("升序打印：");
         v10.printToRight();
 
