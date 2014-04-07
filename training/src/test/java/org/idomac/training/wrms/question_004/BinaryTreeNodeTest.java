@@ -17,5 +17,7 @@ public class BinaryTreeNodeTest {
         binaryTree.addNode(new BinaryTreeNode(7));
 
         binaryTree.print();
+
+        binaryTree.getPath(22);
     }
 }

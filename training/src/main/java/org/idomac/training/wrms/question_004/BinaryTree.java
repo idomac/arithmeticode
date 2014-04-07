@@ -1,5 +1,6 @@
 package org.idomac.training.wrms.question_004;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -65,8 +66,7 @@ public class BinaryTree {
      * @param value
      */
     public void getPath(int value) {
-
-
+        getPath(this.getRoot(),new ArrayList<Integer>(),0,value);
     }
 
 
@@ -76,7 +76,32 @@ public class BinaryTree {
      * @param pathList : 路径存储集合
      * @param sumValue : 路径的和
      */
-    public void getPath(BinaryTreeNode node,List<Integer> pathList, int sumValue) {
+    public void getPath(BinaryTreeNode node,List<Integer> pathList, int tempSumValue, int sumValue) {
+        if(null == node) {
+            return;
+        }
+
+        tempSumValue +=node.getValue();//临时和
+        pathList.add(node.getValue());//当前节点入栈
+
+        boolean isLeaf = (null == node.getLeft() && null == node.getRight());//是否为叶子
+
+        //如果找到叶子节点,且当前的临时和与目标的数值一致,则输出
+        if(isLeaf && tempSumValue == sumValue) {
+            System.out.println("sumPath("+sumValue+") :");
+            for(int i: pathList) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+
+        //由于如果上面出现叶子的时候,则其实node.getLeft()和node.getRight的时候,都会为null
+        getPath(node.getLeft(),pathList,tempSumValue,sumValue);
+        getPath(node.getRight(),pathList,tempSumValue,sumValue);
+
+        // 保证递归完成后返回父节点时路径是根结点到父节点的路径，之后遍历父节点的其他子节点，没有则返回到爷爷节点...
+        pathList.remove(pathList.size()-1);//当前节点出栈
+
 
     }
 
