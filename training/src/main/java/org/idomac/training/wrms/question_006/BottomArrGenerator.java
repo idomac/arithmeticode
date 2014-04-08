@@ -14,5 +14,5 @@ package org.idomac.training.wrms.question_006;
  * 分配: 6,2,1,0,0,0,1,0,0,0
  * 0 在下排出现了 6 次，1 在下排出现了 2 次,2 在下排出现了 1 次，3 在下排出现了 0 次...
  */
-public class Answer006 {
+public class BottomArrGenerator {
 }
