@@ -44,13 +44,19 @@ public class CustomStack {
             maxHeap(arr,i,heapsize);
     }
 
+    /**
+     * 调整为最大堆
+     * @param arr
+     * @param i
+     * @param heapsize
+     */
     public static void maxHeap(int arr[],int i,int heapsize) {
         int largest = i;
         int left = 2*i;
         int right = 2*i+1;
-        if(left<=heapsize&&arr[i-1]<arr[left-1])
+        if(left<=heapsize && arr[i-1]<arr[left-1])
             largest = left;
-        if(right<=heapsize&&arr[largest-1]<arr[right-1])
+        if(right<=heapsize && arr[largest-1]<arr[right-1])
             largest = right;
         if(largest!=i){
             int temp = arr[i-1];
