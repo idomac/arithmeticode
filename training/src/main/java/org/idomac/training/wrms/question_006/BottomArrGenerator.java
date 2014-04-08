@@ -36,15 +36,37 @@ public class BottomArrGenerator {
         }
 
         int[] top = new int[n];
-        int[] buttom = new int[n];
+        int[] bottom = new int[n];
 
         //把相关的数字设置进去
         for (int i = 0 ; i < top.length; i++) {
             top[i] = i;
-
-            System.out.println(top[i]);
+            //System.out.println(top[i]);
         }
-        return null;
+
+        for (int m = 0; m < n + 2; m++) {
+            boolean flag = true;    // 找到结果标志
+
+            for (int i = 0; i < n; i++) {// 逐位对应
+                int count = getCount(i, bottom);
+                if (bottom[i] != count) {// 和上一次算出来的次数不符
+                    bottom[i] = count;
+                    flag = false;
+                }
+            }
+
+            // 连续2次得到的次数一样，则为正确结果
+            if (flag)
+                break;
+
+            if (n + 1 == m && !flag) {
+               // 算法有缺陷，n=5时是有结果2,1,2,0,0的，底下结果如果有2个数字等于上面的数字就算不出来
+                System.out.println("找不到结果");
+                return null;
+            }
+        }
+
+        return bottom;
     }
 
     /**
