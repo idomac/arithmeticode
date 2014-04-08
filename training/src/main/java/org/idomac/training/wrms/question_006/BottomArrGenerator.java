@@ -17,6 +17,8 @@ package org.idomac.training.wrms.question_006;
  * *******************************************************8888
  * 参考:
  * 1.http://zhuiyi74.iteye.com/blog/839742
+ * 2.http://blog.csdn.net/heaven13483/article/details/7925621
+ * 3.http://blog.csdn.net/wcyoot/article/details/6428305
  *
  */
 public class BottomArrGenerator {
@@ -46,7 +48,7 @@ public class BottomArrGenerator {
     }
 
     /**
-     * .统计数字n在数组arr中出现的次数
+     * 统计数字n在数组arr中出现的次数
      * @param num
      * @param arr
      * @return
