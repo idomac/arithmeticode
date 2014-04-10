@@ -13,6 +13,8 @@ import java.util.Arrays;
  * 参考资料 :
  * 1.http://blog.csdn.net/lcore/article/details/9100073
  * 2.http://blog.csdn.net/a352193394/article/details/7210435
+ * 3.http://courses.cs.washington.edu/courses/cse373/11wi/homework/5/BinaryHeap.java
+ * 4.http://users.cis.fiu.edu/~weiss/dsaajava/code/DataStructures/BinaryHeap.java
  */
 public class BinaryHeap {
 
