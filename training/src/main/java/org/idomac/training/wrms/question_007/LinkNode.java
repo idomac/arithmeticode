@@ -8,5 +8,13 @@ package org.idomac.training.wrms.question_007;
  * 1.如果链表可能有环列?
  * 2.如果需要求出俩个链表相交的第一个节点列?
  */
-public class Node {
+public class LinkNode {
+
+    int data;
+
+    LinkNode next;
+
+    public LinkNode(int data) {
+        this.data = data;
+    }
 }
