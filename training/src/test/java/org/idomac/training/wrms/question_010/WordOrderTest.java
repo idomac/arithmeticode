@@ -14,6 +14,7 @@ public class WordOrderTest {
 
     @Test
     public void changeOrder()  {
-
+        String q = "Hello,please fix me!";
+        WordOrder.handle(q);
     }
 }
