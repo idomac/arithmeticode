@@ -28,41 +28,48 @@ public class CustomStack {
         for(int j = k;j<a.length;j++){
             if(a[j]<target[0]){
                 target[0] = a[j];
-                maxHeap(target,1,k);
+                minHeap(target,1,k);
             }
         }
         return target;
     }
 
     /**
-     * 建最大堆
+     * 建最小堆
      * @param arr
      */
     public static void buildHeap(int[] arr) {
         int heapsize = arr.length;
         for(int i=arr.length/2;i>0;i--)
-            maxHeap(arr,i,heapsize);
+            minHeap(arr,i,heapsize);
     }
 
     /**
-     * 调整为最大堆
+     * 调整为最小堆
+     *
+     * 最大堆：根结点的键值是所有堆结点键值中最大者的堆。
+     * 最小堆：根结点的键值是所有堆结点键值中最小者的堆。
+     *
      * @param arr
      * @param i
      * @param heapsize
      */
-    public static void maxHeap(int arr[],int i,int heapsize) {
-        int largest = i;
+    public static void minHeap(int arr[],int i,int heapsize) {
+        int rootIndex = i;
         int left = 2*i;
         int right = 2*i+1;
-        if(left<=heapsize && arr[i-1]<arr[left-1])
-            largest = left;
-        if(right<=heapsize && arr[largest-1]<arr[right-1])
-            largest = right;
-        if(largest!=i){
+
+        //在左中右中找到一个最大者的索引
+        if(left<=heapsize && arr[rootIndex-1]<arr[left-1])
+            rootIndex = left;
+        if(right<=heapsize && arr[rootIndex-1]<arr[right-1])
+            rootIndex = right;
+
+        if(rootIndex!=i){
             int temp = arr[i-1];
-            arr[i-1] = arr[largest-1];
-            arr[largest-1] = temp;
-            maxHeap(arr,largest,heapsize);
+            arr[i-1] = arr[rootIndex-1];
+            arr[rootIndex-1] = temp;
+            minHeap(arr,rootIndex,heapsize);
         }
     }
 }
